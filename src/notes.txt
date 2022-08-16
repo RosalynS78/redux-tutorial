@@ -1,0 +1,45 @@
+!Rules
+all properties on state have a reducers
+all reducers get exported in the combineReducers object
+all reducers must return state cannot return undefined - will return error!
+
+these properties must have a reducers(just a function)
+
+hello: "hello Redux!",
+cars: ["name"],
+users: null,
+
+(a function) - must return state for all properties must have reducers for all properties
+const hello = () => state
+const cars = () => state
+const users = () => state
+
+
+How to setup redux
+
+npx create-react-app redx-tutorial
+cd redux-tutorial
+npm i redux react-redux
+package.json file
+rip out non used code in app.js
+
+1. create state.js
+{hello: "hello Redux!"}
+
+2. create reducers.js
+    rules:
+    all properties on state have reducers
+    all reducers get exported in the combineReducers object
+    all reducers must return state
+
+3. create store.js 
+    import/export createStore 
+    reducers first, state second 
+
+4. import and wrap provider around the app
+        import store and pass store as prop called store 
+
+5. test the app to see it's still working  
+
+smart containers and pass props
+connect and mapStateToProps functions
