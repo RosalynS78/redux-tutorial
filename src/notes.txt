@@ -43,3 +43,93 @@ rip out non used code in app.js
 
 smart containers and pass props
 connect and mapStateToProps functions
+
+
+
+challenge
+
+1. copy/paste lines in component a few times
+2. add 3 items:
+    cats: ["fluffy", "pandora", "vermin"]
+    dogs: ["buddy", "artemis", "super"]
+    dreams: ["peace", "love", "hope"]
+add reducers for each that pass in an array as default value for state 
+3. list the values as props in the containers
+4. check to see if you got it over there
+
+
+
+redux - actionCreators
+what is an actions?
+object with keys and values
+
+const anObject = {
+    type: "ADD_CAR", <= object
+    value: "Ford"    <= value 
+}
+const addCar = () => {
+    return {
+        type: "ADD_CAR",
+        value: "Ford"
+    }
+}
+
+
+ action - passes to the reducers
+ must not be same action
+ knows by type
+
+
+
+
+
+rules - must have a type must have a value (payload) - same
+
+action creators just a function that returns action
+keys - types - values
+
+
+1. Move all to a "redux" folder  
+2. walk-through flow again
+3. adjust import in index.js  
+4. MapDispatchToProps  
+5. Create action.js file 
+    object with keys: ype and value 
+6. create Action Creator 
+    returns Action object
+7. Improve the Reducers:
+    js 
+        switch(action.type) {
+            case 'Add Car':
+                return [...state, action.value]
+            case 'Remove_Car':
+                const newState = [...state]
+                newState.splice(action.value, 1);
+                return newState;
+            default: 
+                return state
+        }
+8. Add 'mapStateToProps in ProfileContainer
+
+created action file with action(obj) with key-type and value, wrap it in a function actionCreator. key and value used in the reducer - used switch action - 
+switch statement evaluates action through the value
+
+mapDispatchToProps - passes props to dumb component (profileContainer.js)
+
+
+challenge
+state.js
+add user: ["daffy duck"]
+marbleColors: ["tiger's eye"]
+
+
+reducer - add similar to const cars for user and marbleColors
+
+container - import actions
+actionCreator for  user and marbleColors
+similar to addCar and removeCar
+
+container - needs props add marbleColors and removerMarbleColors - addUsers and removeUsers
+
+component - build another form for marbleColors and user
+handleChange and handleSubmits for user and marbleColors

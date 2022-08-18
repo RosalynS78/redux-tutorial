@@ -2,8 +2,9 @@
 export default {
       
         hello: "hello Redux!",
-        cars: ["name"],
-        user: null
+        cars: ["model s", "model 3", "model x", "model y"],
+        user: "Rosalyn",
+        example: "YO it works!"
 };
 
 
